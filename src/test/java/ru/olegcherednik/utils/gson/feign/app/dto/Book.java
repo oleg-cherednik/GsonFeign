@@ -10,6 +10,15 @@ public class Book {
     private String author;
     private String response;
 
+    public Book() {
+    }
+
+    public Book(String title, String author, String response) {
+        this.title = title;
+        this.author = author;
+        this.response = response;
+    }
+
     public String getTitle() {
         return title;
     }

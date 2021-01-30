@@ -7,6 +7,7 @@ import ru.olegcherednik.utils.gson.GsonDecorator;
 
 import java.io.IOException;
 import java.io.Reader;
+import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.nio.charset.StandardCharsets;
 
@@ -26,6 +27,15 @@ public class GsonDecoder implements Decoder {
             return null;
 
         try (Reader in = response.body().asReader(StandardCharsets.UTF_8)) {
+            if (type instanceof ParameterizedType) {
+                Type[] args = ((ParameterizedType)type).getActualTypeArguments();
+
+                if (args.length == 1)
+                    return gson.readList(in, (Class<?>)args[0]);
+                if (args.length == 2)
+                    return gson.readMap(in, (Class<?>)args[0]);
+            }
+
             return gson.readValue(in, (Class<?>)type);
         }
     }
