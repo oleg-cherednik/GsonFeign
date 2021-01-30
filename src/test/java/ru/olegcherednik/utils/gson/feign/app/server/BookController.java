@@ -27,19 +27,19 @@ public class BookController {
     @GetMapping("books")
     public List<Book> findBooks() {
         return Arrays.asList(
-                new Book("title1", "author1", "resp1"),
-                new Book("title2", "author2", "resp2"));
+                new Book("title1", "author1"),
+                new Book("title2", "author2"));
     }
 
     @GetMapping("books/group/author")
     public Map<String, List<Book>> groupBooksByAuthor() {
         Map<String, List<Book>> map = new HashMap<>();
         map.put("Oleg Cherednik", Arrays.asList(
-                new Book("Java", "Oleg Cherednik", "res"),
-                new Book("C++", "Oleg Cherednik", "res")));
+                new Book("Java", "Oleg Cherednik"),
+                new Book("C++", "Oleg Cherednik")));
         map.put("Anna Pavlova", Arrays.asList(
-                new Book("Go", "Anna Pavlova", "res"),
-                new Book("Python", "Anna Pavlova", "res")));
+                new Book("Go", "Anna Pavlova"),
+                new Book("Python", "Anna Pavlova")));
         return map;
     }
 }

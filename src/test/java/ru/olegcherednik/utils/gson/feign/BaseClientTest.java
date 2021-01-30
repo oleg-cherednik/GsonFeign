@@ -4,17 +4,19 @@ import feign.Feign;
 import feign.Logger;
 import feign.okhttp.OkHttpClient;
 import feign.spring.SpringContract;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.web.server.LocalServerPort;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.test.context.testng.AbstractTransactionalTestNGSpringContextTests;
 import ru.olegcherednik.utils.gson.GsonDecorator;
 import ru.olegcherednik.utils.gson.GsonHelper;
 import ru.olegcherednik.utils.gson.feign.app.server.SpringBootApp;
 
+/**
+ * @author Oleg Cherednik
+ * @since 17.01.2021
+ */
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT, classes = SpringBootApp.class)
-@ExtendWith(SpringExtension.class)
-public abstract class BaseClientTest {
+public abstract class BaseClientTest extends AbstractTransactionalTestNGSpringContextTests {
 
     @LocalServerPort
     protected int randomServerPort;

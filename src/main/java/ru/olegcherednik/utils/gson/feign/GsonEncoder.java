@@ -6,6 +6,10 @@ import ru.olegcherednik.utils.gson.GsonDecorator;
 
 import java.lang.reflect.Type;
 
+/**
+ * @author Oleg Cherednik
+ * @since 17.01.2021
+ */
 public class GsonEncoder implements Encoder {
 
     private final GsonDecorator gson;

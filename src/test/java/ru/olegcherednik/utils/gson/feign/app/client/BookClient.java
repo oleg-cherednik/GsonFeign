@@ -16,7 +16,7 @@ import java.util.Map;
 @SuppressWarnings("InterfaceNeverImplemented")
 public interface BookClient {
 
-    @PostMapping(value = "book", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "books", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
     Book createBook(@RequestBody Book book);
 
     @GetMapping("books")

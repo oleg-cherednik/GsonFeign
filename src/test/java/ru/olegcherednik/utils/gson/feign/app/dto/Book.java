@@ -13,10 +13,9 @@ public class Book {
     public Book() {
     }
 
-    public Book(String title, String author, String response) {
+    public Book(String title, String author) {
         this.title = title;
         this.author = author;
-        this.response = response;
     }
 
     public String getTitle() {

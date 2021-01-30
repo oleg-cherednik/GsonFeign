@@ -35,7 +35,7 @@ tasks.withType(JavaCompile) {
 }
 
 configurations {
-    jar.archiveName = "gson-feign-${version}.jar"
+    jar.archiveName = 'gson-feign-${version}.jar'
 }
 
 dependencies {
@@ -48,18 +48,15 @@ dependencies {
 //    testImplementation 'io.github.openfeign:feign-jackson:11.0'
     testImplementation 'io.github.openfeign:feign-gson:11.0'
 
-
-
     testImplementation 'org.springframework.boot:spring-boot-starter-web:2.3.8.RELEASE'
-//    testImplementation 'org.springframework.boot:spring-boot-starter-json:2.3.8.RELEASE'
+    testImplementation 'org.springframework.boot:spring-boot-starter-jdbc:2.3.8.RELEASE'
+    testImplementation 'com.h2database:h2:1.4.200'
+
 
     testImplementation('org.springframework.boot:spring-boot-starter-test:2.3.8.RELEASE') {
+        exclude group: 'org.junit.jupiter'
         exclude group: 'org.junit.vintage'
     }
-
-
-//    testImplementation 'commons-io:commons-io:2.5'
-//    testImplementation 'org.mockito:mockito-core:3.7.0'
 }
 
 jacocoTestReport {
