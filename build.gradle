@@ -45,7 +45,9 @@ dependencies {
     testImplementation 'org.testng:testng:7.3.0'
     testImplementation 'io.github.openfeign:feign-okhttp:11.0'
     testImplementation 'io.github.openfeign:feign-spring4:11.0'
-    testImplementation 'io.github.openfeign:feign-jackson:11.0'
+//    testImplementation 'io.github.openfeign:feign-jackson:11.0'
+    testImplementation 'io.github.openfeign:feign-gson:11.0'
+
 
 
     testImplementation 'org.springframework.boot:spring-boot-starter-web:2.3.8.RELEASE'

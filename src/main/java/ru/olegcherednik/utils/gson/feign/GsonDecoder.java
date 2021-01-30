@@ -6,7 +6,9 @@ import feign.codec.Decoder;
 import ru.olegcherednik.utils.gson.GsonDecorator;
 
 import java.io.IOException;
+import java.io.Reader;
 import java.lang.reflect.Type;
+import java.nio.charset.StandardCharsets;
 
 public class GsonDecoder implements Decoder {
 
@@ -23,10 +25,8 @@ public class GsonDecoder implements Decoder {
         if (response.body() == null)
             return null;
 
-//        try (Reader in = response.body().asReader(StandardCharsets.UTF_8)) {
-//            return gson.readValue(in, type);
-//        }
-
-        return null;
+        try (Reader in = response.body().asReader(StandardCharsets.UTF_8)) {
+            return gson.readValue(in, (Class<?>)type);
+        }
     }
 }

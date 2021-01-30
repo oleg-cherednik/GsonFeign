@@ -24,7 +24,7 @@ public class BookClientTest extends BaseClientTest {
         book.setTitle("title");
         book.setAuthor("author");
 
-        Book actual = client.createBook(book);
+        Object actual = client.createBook(book);
 
         int a = 0;
         a++;
