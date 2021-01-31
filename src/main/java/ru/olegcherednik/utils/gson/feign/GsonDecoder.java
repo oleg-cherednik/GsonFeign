@@ -30,7 +30,7 @@ public class GsonDecoder implements Decoder {
             return null;
 
         try (Reader in = response.body().asReader(StandardCharsets.UTF_8)) {
-            return gson.readValue(in, type);
+            return gson.read(in, type);
         }
     }
 }

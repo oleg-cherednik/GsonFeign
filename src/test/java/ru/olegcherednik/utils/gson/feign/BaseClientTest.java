@@ -24,18 +24,12 @@ public abstract class BaseClientTest extends AbstractTransactionalTestNGSpringCo
     protected <T> T buildClient(Class<T> clientClass) {
         GsonDecorator gson = new GsonDecorator(GsonHelper.createGson());
 
-//        ObjectMapper objectMapper = new ObjectMapper()
-//                .registerModule(new Jdk8Module())
-//                .registerModule(new JavaTimeModule());
-
         return Feign.builder()
                     .contract(new SpringContract())
                     .client(new OkHttpClient())
                     .encoder(new GsonEncoder(gson))
                     .decoder(new GsonDecoder(gson))
-//                    .encoder(new JacksonEncoder(objectMapper))
-//                    .decoder(new JacksonDecoder(objectMapper))
-//                    .logger(new Slf4jLogger(FileSetClient.class))
+                    .decode404()
                     .logLevel(Logger.Level.FULL)
                     .target(clientClass, String.format("http://localhost:%d", randomServerPort));
     }

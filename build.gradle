@@ -42,7 +42,9 @@ dependencies {
     implementation 'io.github.openfeign:feign-core:11.0'
     implementation 'ru.oleg-cherednik.gson-utils:gson-utils:2.8.6.1'
 
-    testImplementation 'org.testng:testng:7.3.0'
+    testImplementation('org.testng:testng:7.3.0') {
+        exclude group: 'junit', module: 'junit'
+    }
     testImplementation 'io.github.openfeign:feign-okhttp:11.0'
     testImplementation 'io.github.openfeign:feign-spring4:11.0'
 //    testImplementation 'io.github.openfeign:feign-jackson:11.0'
@@ -54,8 +56,9 @@ dependencies {
 
 
     testImplementation('org.springframework.boot:spring-boot-starter-test:2.3.8.RELEASE') {
-        exclude group: 'org.junit.jupiter'
-        exclude group: 'org.junit.vintage'
+        exclude group: 'org.junit.jupiter', module: 'junit-jupiter'
+        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+        exclude group: 'org.mockito', module: 'mockito-junit-jupiter'
     }
 }
 
