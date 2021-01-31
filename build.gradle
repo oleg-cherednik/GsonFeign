@@ -24,7 +24,7 @@ repositories {
 }
 
 group 'ru.oleg-cherednik.gson-utils'
-version '2.8.6.1_11.0_1'
+version 'g2.8.6.1_f11.0_1'
 
 sourceCompatibility = '1.8'
 targetCompatibility = '1.8'
