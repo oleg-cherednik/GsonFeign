@@ -39,23 +39,20 @@ configurations {
 }
 
 dependencies {
-    implementation 'io.github.openfeign:feign-core:11.0'
-    implementation 'ru.oleg-cherednik.gson-utils:gson-utils:2.8.6_1'
+    implementation "io.github.openfeign:feign-core:${property('feign.version')}"
+    implementation "ru.oleg-cherednik.gson-utils:gson-utils:${property('gson-utils.version')}"
 
     testImplementation('org.testng:testng:7.3.0') {
         exclude group: 'junit', module: 'junit'
     }
-    testImplementation 'io.github.openfeign:feign-okhttp:11.0'
-    testImplementation 'io.github.openfeign:feign-spring4:11.0'
-//    testImplementation 'io.github.openfeign:feign-jackson:11.0'
-    testImplementation 'io.github.openfeign:feign-gson:11.0'
+    testImplementation "io.github.openfeign:feign-okhttp:${property('feign.version')}"
+    testImplementation "io.github.openfeign:feign-spring4:${property('feign.version')}"
+    testImplementation "io.github.openfeign:feign-gson:${property('feign.version')}"
+    testImplementation "org.springframework.boot:spring-boot-starter-web:${property('spring-boot.version')}"
+    testImplementation "org.springframework.boot:spring-boot-starter-jdbc:${property('spring-boot.version')}"
+    testImplementation "com.h2database:h2:1.4.200"
 
-    testImplementation 'org.springframework.boot:spring-boot-starter-web:2.3.8.RELEASE'
-    testImplementation 'org.springframework.boot:spring-boot-starter-jdbc:2.3.8.RELEASE'
-    testImplementation 'com.h2database:h2:1.4.200'
-
-
-    testImplementation('org.springframework.boot:spring-boot-starter-test:2.3.8.RELEASE') {
+    testImplementation("org.springframework.boot:spring-boot-starter-test:${property('spring-boot.version')}") {
         exclude group: 'org.junit.jupiter', module: 'junit-jupiter'
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
         exclude group: 'org.mockito', module: 'mockito-junit-jupiter'
@@ -89,7 +86,7 @@ modifyPom {
         inceptionYear '2021'
 
         scm {
-            url 'https://github.com/oleg-cherednik/gson-utils'
+            url 'https://github.com/oleg-cherednik/gson-feignGsonFeign'
             connection 'scm:https://github.com/oleg-cherednik/GsonFeign.git'
             developerConnection 'scm:git@github.com:oleg-cherednik/GsonFeign.git'
         }
