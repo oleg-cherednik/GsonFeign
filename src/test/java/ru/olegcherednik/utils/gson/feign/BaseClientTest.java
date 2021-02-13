@@ -8,7 +8,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.test.context.testng.AbstractTransactionalTestNGSpringContextTests;
 import ru.olegcherednik.utils.gson.GsonDecorator;
-import ru.olegcherednik.utils.gson.GsonHelper;
+import ru.olegcherednik.utils.gson.GsonUtilsHelper;
 import ru.olegcherednik.utils.gson.feign.app.server.SpringBootApp;
 
 /**
@@ -22,7 +22,7 @@ public abstract class BaseClientTest extends AbstractTransactionalTestNGSpringCo
     protected int randomServerPort;
 
     protected <T> T buildClient(Class<T> clientClass) {
-        GsonDecorator gson = new GsonDecorator(GsonHelper.createGson());
+        GsonDecorator gson = new GsonDecorator(GsonUtilsHelper.createGson());
 
         return Feign.builder()
                     .contract(new SpringContract())

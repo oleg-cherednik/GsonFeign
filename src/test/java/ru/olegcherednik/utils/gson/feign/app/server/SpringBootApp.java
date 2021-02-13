@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.gson.GsonAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Import;
 import ru.olegcherednik.utils.gson.GsonDecorator;
-import ru.olegcherednik.utils.gson.GsonHelper;
+import ru.olegcherednik.utils.gson.GsonUtilsHelper;
 
 /**
  * @author Oleg Cherednik
@@ -21,7 +21,7 @@ public class SpringBootApp {
 
         @Bean
         public Gson gson() {
-            return GsonHelper.createGson();
+            return GsonUtilsHelper.createGson();
         }
 
         @Bean
