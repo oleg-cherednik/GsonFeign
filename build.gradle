@@ -81,12 +81,12 @@ test {
 modifyPom {
     project {
         name 'gson-feign'
-        description 'Some utils for Jackson Project'
+        description 'Gson support for Feign'
         url 'https://github.com/oleg-cherednik/GsonFeign'
         inceptionYear '2021'
 
         scm {
-            url 'https://github.com/oleg-cherednik/gson-feignGsonFeign'
+            url 'https://github.com/oleg-cherednik/GsonFeign'
             connection 'scm:https://github.com/oleg-cherednik/GsonFeign.git'
             developerConnection 'scm:git@github.com:oleg-cherednik/GsonFeign.git'
         }
