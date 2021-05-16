@@ -4,7 +4,7 @@
 [![travis-ci](https://travis-ci.com/oleg-cherednik/GsonFeign.svg?branch=dev)](https://travis-ci.com/oleg-cherednik/GsonFeign)
 [![circle-ci](https://circleci.com/gh/oleg-cherednik/GsonFeign/tree/dev.svg?style=shield)](https://app.circleci.com/pipelines/github/oleg-cherednik/GsonFeign)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.txt)
-[![codecov](https://codecov.io/gh/oleg-cherednik/GsonUtils/branch/dev/graph/badge.svg?token=UnqBOd1gbA)](https://codecov.io/gh/oleg-cherednik/GsonUtils)
+[![codecov](https://codecov.io/gh/oleg-cherednik/GsonFeign/branch/dev/graph/badge.svg?token=UnqBOd1gbA)](https://codecov.io/gh/oleg-cherednik/GsonUtils)
 [![Known Vulnerabilities](https://snyk.io/test/github/oleg-cherednik/GsonUtils/badge.svg?targetFile=build.gradle)](https://snyk.io/test/github/oleg-cherednik/GsonUtils?targetFile=build.gradle)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/ba0faab92b44432491376ee5d331a63e)](https://www.codacy.com/gh/oleg-cherednik/GsonUtils/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=oleg-cherednik/GsonUtils&amp;utm_campaign=Badge_Grade)     
 # GsonUtils
@@ -23,15 +23,15 @@
 ## Gradle
 
 ```groovy
-compile 'ru.oleg-cherednik.gson-utils:gson-utils:2.1'
+compile 'ru.oleg-cherednik.utils.gson.gson:gson-feign:2.1'
 ```
 
 ## Maven
 
 ```xml
 <dependency>
-    <groupId>ru.oleg-cherednik.gson-utils</groupId>
-    <artifactId>gson-utils</artifactId>
+    <groupId>ru.oleg-cherednik.utils.gson.gson</groupId>
+    <artifactId>gson-feign</artifactId>
     <version>2.1</version>
 </dependency>
 ```
