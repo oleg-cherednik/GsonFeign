@@ -41,13 +41,13 @@ configurations {
 
 dependencies {
     compileOnly "io.github.openfeign:feign-core:${property('feign.version')}"
-    compileOnly "com.google.code.gson:gson:${property('gson.version')}"
     implementation "ru.oleg-cherednik.utils.gson:gson-utils:${property('gson-utils.version')}"
 
     testImplementation('org.testng:testng:7.3.0') {
         exclude group: 'junit', module: 'junit'
     }
 
+    testImplementation "com.google.code.gson:gson:${property('gson.version')}"
     testImplementation "io.github.openfeign:feign-okhttp:${property('feign.version')}"
     testImplementation "io.github.openfeign:feign-spring4:${property('feign.version')}"
     testImplementation "io.github.openfeign:feign-gson:${property('feign.version')}"
